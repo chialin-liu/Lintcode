@@ -1,0 +1,4 @@
+Done on July 17
+-------------
+1. using Queue, to store node which its in-degree is zero. every time the node's neighbor is being traversed, its in-degree minus 1. 
+2. Solution2, use dfs and stack. 
