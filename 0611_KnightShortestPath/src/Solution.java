@@ -35,23 +35,25 @@ public class Solution {
     queue.offer(source);
     int step = 0;
     while(!queue.isEmpty()){
-      step++;
+//      step++;
       int size = queue.size();
       for(int j = 0; j < size; j++){
         Point cur = queue.poll();
+        if(cur.x == destination.x && cur.y == destination.y){
+          return step;
+        }
         Point new_p = new Point();
+
         for(int i = 0; i < 8; i++){
           new_p.x = cur.x + dx[i];
           new_p.y = cur.y + dy[i];
-          if(new_p.x >= 0 && new_p.x < grid[0].length && new_p.y >= 0 && new_p.y < grid.length && (grid[new_p.y][new_p.x] == false)){
-            if(new_p.x == destination.x && new_p.y == destination.y){
-              return step;
-            }
+          if(new_p.y >= 0 && new_p.y < grid[0].length && new_p.x >= 0 && new_p.x < grid.length && (grid[new_p.x][new_p.y] == false)){
             queue.offer(new Point(new_p.x,new_p.y));
-            grid[new_p.y][new_p.x] = true;
+            grid[new_p.x][new_p.y] = true;
           }
         }
       }
+      step++;
     }
     return -1;
   }

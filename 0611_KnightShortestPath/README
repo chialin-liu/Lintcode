@@ -1,1 +1,3 @@
+First on Aug 6
 1. queue.offer(new Point(x,y)) will be correct. if I use queue.offer(new_p)), it would be wrong
+2. pay attention to which is x and y, I was confused
