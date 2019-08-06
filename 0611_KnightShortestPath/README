@@ -1,0 +1,1 @@
+1. queue.offer(new Point(x,y)) will be correct. if I use queue.offer(new_p)), it would be wrong
